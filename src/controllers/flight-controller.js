@@ -46,6 +46,7 @@ const update = async(req, res) => {
 
 const getAll = async (req, res) => {
     try {
+        console.log(req.query);
         const flights = await flightService.getFlightData(req.query);
         console.log("res.params", req.params);
         res.status(200).json({

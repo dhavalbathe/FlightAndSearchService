@@ -33,7 +33,7 @@ class FlightRepository {
             return flight;
         } catch (error) {
             console.log('Something went wrong at Repository layer of flight');
-            throw { error };
+            throw error;
         }
     }
 
@@ -58,13 +58,13 @@ class FlightRepository {
             return flight;
         } catch (error) {
             console.log("something went wrong at repository layer of flight");
-            throw { error };
+            throw error;
         }
     }
 
     async getAllFlights(filter) {
         try {
-            console.log(filter);
+            console.log("filter:", filter);
             const filterObject = this.#createFilter(filter);
             const flights = await Flights.findAll({
                 where: filterObject
@@ -72,7 +72,7 @@ class FlightRepository {
             return flights;
         } catch (error) {
             console.log("Something went wrong at repository layer of flight");
-            throw { error };
+            throw error;
         }
     }
 }
