@@ -28,7 +28,6 @@ class FlightRepository {
 
     async createFlight(data) {
         try {
-            console.log('in the createflight of repository');
             const flight = await Flights.create(data);
             return flight;
         } catch (error) {

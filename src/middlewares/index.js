@@ -1,5 +1,6 @@
-const { validateCreateFlight } = require('./flight-middleware.js');
+const { validateCreateFlight, validateFlightId } = require('./flight-middleware.js');
 
 module.exports = {
     validateCreateFlight,
+    validateFlightId
 }

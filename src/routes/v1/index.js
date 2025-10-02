@@ -20,7 +20,7 @@ router.post(
     flightController.create
 );
 router.get('/flights', flightController.getAll);
-router.get('/flight/:id', flightController.get);
+router.get('/flight/:id', flightMiddleware.validateFlightId, flightController.get);
 router.patch('/flight/:id', flightController.update);
 
 router.post('/airport', airportController.create);
